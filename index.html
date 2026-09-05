@@ -23,157 +23,107 @@
   *{box-sizing:border-box}
   html{-webkit-text-size-adjust:100%}
   body{
-    margin:0;
-    background:var(--firn);
-    color:var(--rock);
-    font-family:"Source Serif 4",Georgia,serif;
-    font-size:17px;
-    line-height:1.62;
+    margin:0;background:var(--firn);color:var(--rock);
+    font-family:"Source Serif 4",Georgia,serif;font-size:17px;line-height:1.6;
   }
   .wrap{max-width:820px;margin:0 auto;padding:0 24px}
-  p{max-width:60ch;margin:0 0 1em}
-  a{color:var(--rock);text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:var(--contour)}
+  p{max-width:56ch;margin:0 0 .8em}
+  a{color:inherit;text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;text-decoration-color:var(--contour)}
   a:hover{text-decoration-color:var(--route)}
   a:focus-visible{outline:2px solid var(--route);outline-offset:3px}
-
-  h1,h2,h3,.fig,.alt,.stat b,.tag{font-family:"Barlow Condensed",Impact,sans-serif;font-weight:600;letter-spacing:.005em}
+  h1,h2,h3,.alt,.stat b,.tag,.salut,.leg b{font-family:"Barlow Condensed",Impact,sans-serif;font-weight:600}
 
   /* ---------- Hero ---------- */
-  header{padding:44px 0 8px}
-  .salut{
-    font-family:"Barlow Condensed",sans-serif;font-weight:500;font-size:18px;
-    color:var(--fels);margin:0 0 6px;letter-spacing:.06em;
+  .hero{
+    position:relative;min-height:76vh;display:flex;align-items:flex-end;
+    background:
+      linear-gradient(180deg,rgba(20,26,30,.15) 40%,rgba(20,26,30,.78) 100%),
+      url("bild/berg.jpg") center 55%/cover no-repeat,
+      linear-gradient(165deg,#8fb3c6 0%,#c3d9e3 55%,#eef3f5 100%);
+    color:#fff;
   }
-  h1{font-size:clamp(38px,8.5vw,68px);line-height:.98;margin:0 0 18px;max-width:14ch}
-  .lede{font-size:19px;color:var(--fels);max-width:52ch}
-  .ridge{display:block;width:100%;height:auto;margin:6px 0 0}
-  .ridge .ink{fill:none;stroke:var(--contour);stroke-width:1.1;opacity:.5}
-  .ridge .peak-dot{fill:var(--route)}
-  .ridge .peak-label{font-family:"Barlow Condensed",sans-serif;font-size:19px;fill:var(--rock);font-weight:600}
-  .ridge .peak-alt{font-family:"Barlow Condensed",sans-serif;font-size:15px;fill:var(--fels)}
+  .hero .wrap{padding-bottom:46px;padding-top:120px;width:100%}
+  .salut{font-size:19px;letter-spacing:.08em;margin:0 0 8px;opacity:.85;font-weight:500}
+  h1{font-size:clamp(42px,10vw,76px);line-height:.95;margin:0;max-width:12ch}
 
   /* ---------- Sections ---------- */
-  section{padding:52px 0}
-  h2{font-size:clamp(26px,5vw,34px);margin:0 0 4px;line-height:1.05}
-  .sub{font-family:"Barlow Condensed",sans-serif;color:var(--fels);font-size:17px;margin:0 0 26px}
+  section{padding:56px 0}
+  h2{font-size:clamp(26px,5vw,34px);margin:0 0 22px;line-height:1.05}
 
   /* ---------- Touren ---------- */
-  .tour{
-    display:grid;grid-template-columns:118px 1fr;gap:26px;
-    padding:34px 0;border-top:1px solid var(--rule);
-  }
+  .tour{display:grid;grid-template-columns:110px 1fr;gap:24px;padding:30px 0;border-top:1px solid var(--rule)}
   .tour:last-of-type{border-bottom:1px solid var(--rule)}
-  .alt{font-size:34px;line-height:1;color:var(--rock)}
-  .alt small{display:block;font-size:14px;color:var(--fels);font-weight:400;margin-top:2px}
-  .alt.blank{color:var(--contour)}
-  .alt.blank span{
-    display:inline-block;width:74px;border-bottom:2px dashed var(--contour);height:22px;
-  }
-  .tour h3{font-size:27px;margin:0 0 2px;line-height:1.08}
-  .tag{
-    display:inline-block;font-size:15px;color:var(--route);
-    border:1px solid var(--route);border-radius:2px;padding:1px 7px;margin:0 0 12px;
-  }
-  .stats{
-    display:flex;flex-wrap:wrap;gap:4px 26px;margin:14px 0 0;padding:0;list-style:none;
-  }
+  .alt{font-size:33px;line-height:1;color:var(--rock)}
+  .alt small{display:block;font-size:13px;color:var(--fels);font-weight:400;margin-top:2px}
+  .alt.blank span{display:inline-block;width:70px;border-bottom:2px dashed var(--contour);height:21px}
+  .tour h3{font-size:27px;margin:0 0 3px;line-height:1.08}
+  .tag{display:inline-block;font-size:15px;color:var(--route);border:1px solid var(--route);border-radius:2px;padding:0 7px;margin:0 0 10px}
+  .stats{display:flex;flex-wrap:wrap;gap:2px 24px;margin:12px 0 0;padding:0;list-style:none}
   .stat{font-family:"Barlow Condensed",sans-serif;font-size:17px;color:var(--fels)}
   .stat b{color:var(--rock);font-weight:600}
-  .src{font-size:15px;margin-top:12px}
+  .src{font-size:15px;color:var(--fels);margin:10px 0 0}
 
   /* ---------- Hütte ---------- */
-  .hut{background:var(--firn-deep)}
-  .facts{
-    display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
-    gap:20px 28px;margin:24px 0 0;padding:22px 0 0;border-top:1px solid var(--rule);list-style:none;
+  .hut{background:var(--firn-deep);padding-top:0}
+  .hutshot{
+    height:min(52vh,380px);margin-bottom:44px;
+    background:
+      url("bild/huette.jpg") center 60%/cover no-repeat,
+      linear-gradient(160deg,#7d8f96,#c3d9e3);
   }
-  .facts li{font-family:"Barlow Condensed",sans-serif;font-size:17px;color:var(--fels);line-height:1.35}
+  .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:18px 26px;margin:22px 0 0;padding:20px 0 0;border-top:1px solid var(--rule);list-style:none}
+  .facts li{font-family:"Barlow Condensed",sans-serif;font-size:16px;color:var(--fels);line-height:1.3}
   .facts b{display:block;font-size:21px;color:var(--rock);font-weight:600}
 
   /* ---------- Anreise ---------- */
   .legs{margin:0;padding:0;list-style:none}
-  .legs > li{padding:20px 0;border-top:1px solid var(--rule)}
-  .legs > li:last-child{border-bottom:1px solid var(--rule)}
-  .leg-name{font-family:"Barlow Condensed",sans-serif;font-size:22px;margin:0 0 2px}
-  .leg-name .dur{color:var(--fels);font-weight:400}
-  .legs p{margin:0;font-size:16px;color:var(--fels);max-width:58ch}
+  .legs li{padding:15px 0;border-top:1px solid var(--rule);font-size:16px;color:var(--fels);max-width:60ch}
+  .legs li:last-child{border-bottom:1px solid var(--rule)}
+  .leg b{display:block;font-size:21px;color:var(--rock);line-height:1.2}
 
   /* ---------- Karte ---------- */
-  #map{height:380px;border:1px solid var(--rule);background:var(--glacier)}
+  #map{height:360px;border:1px solid var(--rule);background:var(--glacier)}
   .leaflet-container{font-family:"Barlow Condensed",sans-serif;background:var(--glacier)}
-  .pin{
-    font-family:"Barlow Condensed",sans-serif;font-size:15px;color:var(--rock);
-    background:var(--firn);border:1px solid var(--rock);border-radius:2px;
-    padding:1px 6px;white-space:nowrap;
-  }
-  .caption{font-size:15px;color:var(--fels);margin-top:10px}
+  .pin{font-family:"Barlow Condensed",sans-serif;font-size:15px;color:var(--rock);background:var(--firn);border:1px solid var(--rock);border-radius:2px;padding:0 6px;white-space:nowrap}
 
-  footer{padding:44px 0 60px;border-top:1px solid var(--rule);margin-top:20px}
-  footer p{font-family:"Barlow Condensed",sans-serif;color:var(--fels);font-size:17px;margin:0}
+  footer{padding:40px 0 60px;border-top:1px solid var(--rule)}
+  footer p{font-family:"Barlow Condensed",sans-serif;font-size:19px;margin:0 0 6px}
+  footer small{font-size:14px;color:var(--fels)}
 
   @media (max-width:560px){
     body{font-size:16px}
-    .tour{grid-template-columns:1fr;gap:10px;padding:28px 0}
-    .alt{font-size:28px}
+    .hero{min-height:70vh}
+    .tour{grid-template-columns:1fr;gap:8px;padding:26px 0}
+    .alt{font-size:27px}
     .alt small{display:inline;margin-left:8px}
-    section{padding:40px 0}
+    section{padding:42px 0}
   }
-
-  /* one orchestrated moment: the ridge inks itself in */
-  @media (prefers-reduced-motion:no-preference){
-    .ridge .ink{stroke-dasharray:2600;stroke-dashoffset:2600;animation:draw 1.9s cubic-bezier(.22,.61,.36,1) forwards}
-    .ridge .ink:nth-of-type(2){animation-delay:.18s}
-    .ridge .ink:nth-of-type(3){animation-delay:.36s}
-    .ridge .fade{opacity:0;animation:fade .9s ease 1.5s forwards}
-  }
-  @keyframes draw{to{stroke-dashoffset:0}}
-  @keyframes fade{to{opacity:1}}
 </style>
 </head>
 <body>
 
-<header>
+<div class="hero">
   <div class="wrap">
     <p class="salut">Für E &amp; H</p>
-    <h1>Ein Berg, den ihr euch aussucht.</h1>
-    <p class="lede">Zwei Nächte auf der Martin-Busch-Hütte, ein Gipfel im Firn. Drei Möglichkeiten — ihr entscheidet welche.</p>
+    <h1>Sucht euch einen aus.</h1>
   </div>
-
-  <div class="wrap">
-    <svg class="ridge" viewBox="0 0 1200 300" role="img" aria-label="Gezeichnetes Gratprofil der Ötztaler Alpen">
-      <path class="ink" d="M0,232 C70,222 120,206 180,214 C240,222 268,196 322,176 C376,156 404,190 452,196 C500,202 528,166 578,140 C628,114 660,150 706,164 C752,178 780,142 828,120 C876,98 908,138 958,152 C1008,166 1048,140 1100,128 C1152,116 1176,134 1200,130"/>
-      <path class="ink" d="M0,262 C64,254 118,240 176,246 C234,252 262,228 318,210 C374,192 402,222 448,228 C494,234 524,204 574,180 C624,156 656,188 702,200 C748,212 778,180 826,160 C874,140 906,176 956,188 C1006,200 1046,178 1098,168 C1150,158 1176,172 1200,168"/>
-      <path class="ink" d="M0,290 C60,284 116,272 172,277 C228,282 258,260 314,244 C370,228 398,254 444,259 C490,264 520,238 570,218 C620,198 652,226 698,236 C744,246 776,218 824,200 C872,182 904,214 954,224 C1004,234 1044,216 1096,208 C1148,200 1176,210 1200,206"/>
-      <g class="fade">
-        <circle class="peak-dot" cx="828" cy="120" r="4"/>
-        <text class="peak-label" x="842" y="112">Hintere Schwärze</text>
-        <text class="peak-alt" x="842" y="130">3.624 m</text>
-        <circle class="peak-dot" cx="578" cy="140" r="4"/>
-        <text class="peak-label" x="592" y="132">Similaun</text>
-        <text class="peak-alt" x="592" y="150">3.606 m</text>
-      </g>
-    </svg>
-  </div>
-</header>
+</div>
 
 <section>
   <div class="wrap">
-    <h2>Drei Möglichkeiten</h2>
-    <p class="sub">Alle Angaben von alpenvereinaktiv.com</p>
-
     <article class="tour">
       <div class="alt">3.606<small>Meter</small></div>
       <div>
         <h3>Similaun</h3>
         <p class="tag">WS− · unter 30°</p>
-        <p>Der Klassiker über den Niederjochferner. Langer, technisch einfacher Firnanstieg zu einem Gipfel genau auf der Grenze zwischen Nord- und Südtirol. Vom Niederjoch sind es nur wenige Schritte zur Ötzi-Fundstelle am Tisenjoch.</p>
+        <p>Firn über den Niederjochferner. Oben steht ihr auf der Grenze nach Südtirol.</p>
         <ul class="stats">
-          <li class="stat">Strecke <b>26,6 km</b></li>
-          <li class="stat">Aufstieg <b>1.790 hm</b></li>
-          <li class="stat">Dauer <b>11:00 h</b></li>
-          <li class="stat">ab <b>Vent</b></li>
+          <li class="stat">ab Hütte <b>ca. 19 km</b></li>
+          <li class="stat">Aufstieg <b>ca. 1.150 hm</b></li>
+          <li class="stat">Abstieg <b>ca. 1.800 hm</b></li>
+          <li class="stat">Dauer <b>ca. 8 h</b></li>
         </ul>
-        <p class="src">Gut auf zwei Tage aufteilbar — mit Übernachtung auf der Martin-Busch-Hütte oder der Similaunhütte. <a href="https://www.alpenvereinaktiv.com/s/Iwpig">Tour auf alpenvereinaktiv</a></p>
+        <p class="src">Der Link zeigt die lange Variante ab Vent. <a href="https://www.alpenvereinaktiv.com/s/Iwpig">alpenvereinaktiv</a></p>
       </div>
     </article>
 
@@ -182,14 +132,14 @@
       <div>
         <h3>Hintere Schwärze</h3>
         <p class="tag">WS · I · 35°</p>
-        <p>Der höchste Gipfel im Tourengebiet der Hütte und im Sommer viel ruhiger als der Similaun nebenan. Der Weg führt über den zerrissenen Marzellferner, zuletzt sehr steil an der Kante der Nordwand und über leichte Blockkletterei zum Gipfel.</p>
+        <p>Über den Marzellferner, zuletzt steil an der Kante der Nordwand. Viel ruhiger als der Similaun nebenan.</p>
         <ul class="stats">
-          <li class="stat">Strecke <b>19,9 km</b></li>
+          <li class="stat">ab Hütte <b>19,9 km</b></li>
           <li class="stat">Aufstieg <b>1.350 hm</b></li>
           <li class="stat">Abstieg <b>1.950 hm</b></li>
           <li class="stat">Dauer <b>10:00 h</b></li>
         </ul>
-        <p class="src">Ab der Hütte, Abstieg bis Vent. Spaltenbergung sollte sitzen. <a href="https://www.alpenvereinaktiv.com/s/3kCxT">Tour auf alpenvereinaktiv</a></p>
+        <p class="src">Spaltenbergung sollte sitzen. <a href="https://www.alpenvereinaktiv.com/s/3kCxT">alpenvereinaktiv</a></p>
       </div>
     </article>
 
@@ -197,72 +147,53 @@
       <div class="alt blank"><span></span><small>Meter</small></div>
       <div>
         <h3>Euer Berg</h3>
-        <p class="tag">nach Absprache</p>
-        <p>Ihr habt selbst einen Gipfel im Kopf, den ihr schon lange machen wollt? Dann machen wir den. Sagt uns einfach Bescheid — Gebiet, Hütte und Termin richten wir danach aus.</p>
+        <p class="tag">offen</p>
+        <p>Ihr habt was anderes im Kopf? Dann das.</p>
       </div>
     </article>
   </div>
 </section>
 
 <section class="hut">
+  <div class="hutshot"></div>
   <div class="wrap">
-    <h2>Martin-Busch-Hütte</h2>
-    <p class="sub">2.501 m · Ötztaler Alpen · DAV Sektion Berlin</p>
-    <p>Baubeginn in den Dreißigerjahren, fertiggestellt aber erst 1953. Seit dem Umbau 2013 mit modernen Sanitäranlagen und Dusche. Die Gasträume sind klein — bei schönem Wetter sitzt sowieso niemand drinnen, sondern auf der Terrasse mit Blick auf die umliegende Bergwelt.</p>
-    <p>Die Hütte liegt am E5 und ist in der Hochsaison oft ausgebucht. Früh reservieren.</p>
+    <h2>Martin-Busch-Hütte, 2.501 m</h2>
+    <p>Liegt am E5 und ist im Sommer schnell voll.</p>
     <ul class="facts">
       <li><b>29</b>Betten im Lager</li>
       <li><b>76</b>Matratzenlager</li>
-      <li><b>6</b>Plätze im Winterraum, unversperrt</li>
-      <li><b>Sommer</b>Ende Juni bis Ende September</li>
-      <li><b>Winter</b>Anfang März bis Mitte Mai</li>
-      <li><b>Dusche, WLAN</b>umweltzertifiziert</li>
+      <li><b>Juni – September</b>Sommersaison</li>
+      <li><b>März – Mai</b>Wintersaison</li>
+      <li><b>Dusche, WLAN</b>seit dem Umbau 2013</li>
+      <li><b>6</b>Winterraum, offen</li>
     </ul>
-    <p class="src" style="margin-top:22px"><a href="https://hut-reservation.org/reservation/book-hut/476/wizard">Verfügbarkeit und Reservierung</a> · <a href="https://www.alpenvereinaktiv.com/en/mountain-hut/martin-busch-huette/6938830/">Hüttenporträt</a></p>
+    <p class="src" style="margin-top:20px"><a href="https://hut-reservation.org/reservation/book-hut/476/wizard">Reservierung</a></p>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>Anreise</h2>
-    <p class="sub">Alles läuft über Vent, 1.895 m</p>
+    <h2>Anreise über Vent</h2>
     <ul class="legs">
-      <li>
-        <p class="leg-name">Von München <span class="dur">ca. 2:45 h, rund 180 km</span></p>
-        <p>Inntalautobahn A12 bis zur Ausfahrt Ötztal, dann auf der B186 durchs Ötztal bis Zwieselstein und rechts weiter auf der Venter Straße. Alternativ über den Fernpass.</p>
-      </li>
-      <li>
-        <p class="leg-name">Von Innsbruck <span class="dur">ca. 1:20 h, rund 85 km</span></p>
-        <p>A12 westwärts bis Ötztal-Bahnhof, ab dort dieselbe Strecke durchs Tal nach Vent.</p>
-      </li>
-      <li>
-        <p class="leg-name">Mit Bahn und Bus</p>
-        <p>Zug bis Ötztal-Bahnhof, weiter mit dem Postbus durchs Tal bis Vent. Fahrpläne bei <a href="https://www.vvt.at">vvt.at</a>.</p>
-      </li>
-      <li>
-        <p class="leg-name">Parken in Vent</p>
-        <p>Parkplätze am Ortsrand, teils gebührenpflichtig. Direkt am Lift kostet, der kleine Parkplatz vor der Kapelle ist frei.</p>
-      </li>
-      <li>
-        <p class="leg-name">Zustieg zur Hütte <span class="dur">7,4 km, 665 hm, ca. 3:05 h</span></p>
-        <p>Ein breiter Weg von Vent durchs Niedertal, unschwierig, der Similaun bald in Sichtweite. <a href="https://www.alpenvereinaktiv.com/en/route/martin-busch-huette-access-from-vent/12206067/">Beschreibung des Zustiegs</a></p>
-      </li>
+      <li class="leg"><b>München, ca. 2:45 h</b>A12 bis Ausfahrt Ötztal, B186 bis Zwieselstein, dann Venter Straße.</li>
+      <li class="leg"><b>Innsbruck, ca. 1:20 h</b>A12 bis Ötztal-Bahnhof, ab da genauso.</li>
+      <li class="leg"><b>Mit Bahn</b>Bis Ötztal-Bahnhof, weiter mit dem Postbus. Fahrpläne bei <a href="https://www.vvt.at">vvt.at</a>.</li>
+      <li class="leg"><b>Parken</b>Am Ortsrand, teils kostenpflichtig. Vor der Kapelle ist frei.</li>
+      <li class="leg"><b>Zustieg zur Hütte</b>7,4 km, 665 hm, ca. 3 h durchs Niedertal.</li>
     </ul>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>Wo das alles liegt</h2>
-    <p class="sub">Vom Talschluss bis zum Grenzkamm</p>
     <div id="map"></div>
-    <p class="caption">Karte: <a href="https://opentopomap.org">OpenTopoMap</a>, Daten von <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a></p>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <p>Sagt uns, welcher es wird. Um Hütte und Termin kümmern wir uns.</p>
+    <p>Sagt Bescheid, welcher.</p>
+    <small>Tourendaten von alpenvereinaktiv.com, Similaun ab Hütte gerechnet. Karte: OpenTopoMap, OpenStreetMap.</small>
   </div>
 </footer>
 
@@ -271,20 +202,13 @@
 (function(){
   var el = document.getElementById('map');
   if (!el || typeof L === 'undefined') { if(el) el.style.display='none'; return; }
-
   var map = L.map(el, { scrollWheelZoom:false }).setView([46.812, 10.892], 12);
-
   L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
-    maxZoom: 17,
-    attribution: '© OpenTopoMap, © OpenStreetMap-Mitwirkende'
+    maxZoom: 17, attribution: '© OpenTopoMap, © OpenStreetMap-Mitwirkende'
   }).addTo(map);
-
-  function pin(lat, lng, label){
-    L.marker([lat, lng], {
-      icon: L.divIcon({ className:'', html:'<span class="pin">'+label+'</span>', iconSize:null })
-    }).addTo(map);
+  function pin(lat,lng,label){
+    L.marker([lat,lng],{icon:L.divIcon({className:'',html:'<span class="pin">'+label+'</span>',iconSize:null})}).addTo(map);
   }
-
   pin(46.85626, 10.911633, 'Vent');
   pin(46.801111, 10.886944, 'Martin-Busch-Hütte');
 })();
